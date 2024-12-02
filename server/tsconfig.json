@@ -1,14 +1,16 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "composite": true /* Enable project references. */,
-    /* Modules */
-    "rootDir": "src" /* Specify the root folder within your source files. */,
-
-    /* Emit */
-    "outDir": "dist" /* Specify an output folder for all emitted files. */
-    // "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
+    "outDir": "./dist", // Directory for compiled output
+    "rootDir": "./src", // Directory containing source files
+    "target": "ES2022", // Enable modern JavaScript features
+    "module": "ESNext", // Required for `import.meta` and top-level `await`
+    "moduleResolution": "Node", // Resolve modules in Node.js style
+    "resolveJsonModule": true, // Enable importing JSON files
+    "esModuleInterop": true, // Enable compatibility with CommonJS modules
+    "forceConsistentCasingInFileNames": true, // Enforce case-sensitive imports
+    "strict": true, // Enable all strict type-checking options
+    "skipLibCheck": true // Skip type checks for node_modules
   },
-  "include": ["src", "**/*.json"],
-  "typeRoots": ["./node_modules/@types", "./src/types"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
