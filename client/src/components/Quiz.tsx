@@ -1,4 +1,4 @@
-import { useState, } from 'react';
+import { useState } from 'react';
 import type { Question } from '../models/Question.js';
 import { getQuestions } from '../services/questionApi.js';
 
@@ -47,7 +47,11 @@ const Quiz = () => {
   if (!quizStarted) {
     return (
       <div className="p-4 text-center">
-        <button className="btn btn-primary d-inline-block mx-auto" onClick={handleStartQuiz}>
+        <button
+          data-cy="start-quiz"
+          className="btn btn-primary d-inline-block mx-auto"
+          onClick={handleStartQuiz}
+        >
           Start Quiz
         </button>
       </div>
@@ -61,7 +65,11 @@ const Quiz = () => {
         <div className="alert alert-success">
           Your score: {score}/{questions.length}
         </div>
-        <button className="btn btn-primary d-inline-block mx-auto" onClick={handleStartQuiz}>
+        <button
+          data-cy="restart-quiz"
+          className="btn btn-primary d-inline-block mx-auto"
+          onClick={handleStartQuiz}
+        >
           Take New Quiz
         </button>
       </div>
@@ -81,15 +89,26 @@ const Quiz = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div className='card p-4'>
-      <h2>{currentQuestion.question}</h2>
+    <div className="card p-4">
+      <h2 data-cy="current-question">{currentQuestion.question}</h2>
       <div className="mt-3">
-      {currentQuestion.answers.map((answer, index) => (
-        <div key={index} className="d-flex align-items-center mb-2">
-          <button className="btn btn-primary" onClick={() => handleAnswerClick(answer.isCorrect)}>{index + 1}</button>
-          <div className="alert alert-secondary mb-0 ms-2 flex-grow-1">{answer.text}</div>
-        </div>
-      ))}
+        {currentQuestion.answers.map((answer, index) => (
+          <div key={index} className="d-flex align-items-center mb-2">
+            <button
+              data-cy={`answer-${index}`}
+              className="btn btn-primary"
+              onClick={() => handleAnswerClick(answer.isCorrect)}
+            >
+              {index + 1}
+            </button>
+            <div
+              data-cy={`answer-text-${index}`}
+              className="alert alert-secondary mb-0 ms-2 flex-grow-1"
+            >
+              {`${answer}`}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
