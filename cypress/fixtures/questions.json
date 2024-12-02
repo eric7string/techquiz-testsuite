@@ -1,4 +1,62 @@
 [
-  { "id": 1, "question": "What is React?", "options": ["Library", "Framework", "Language"], "answer": "Library" },
-  { "id": 2, "question": "What is JSX?", "options": ["XML", "JavaScript Syntax", "HTML"], "answer": "JavaScript Syntax" }
+  {
+    "id": 1,
+    "question": "What does HTML stand for?",
+    "answers": ["HyperText Markup Language", "Home Tool Markup Language", "HyperLinks and Text Markup Language", "None of the above"],
+    "correctAnswer": 0
+  },
+  {
+    "id": 2,
+    "question": "What is the result of 2 + 2?",
+    "answers": ["3", "4", "22", "None of the above"],
+    "correctAnswer": 1
+  },
+  {
+    "id": 3,
+    "question": "Which programming language is used for web apps?",
+    "answers": ["Java", "C++", "Python", "JavaScript"],
+    "correctAnswer": 3
+  },
+  {
+    "id": 4,
+    "question": "What does CSS stand for?",
+    "answers": ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"],
+    "correctAnswer": 1
+  },
+  {
+    "id": 5,
+    "question": "What is the result of 3 * 3?",
+    "answers": ["6", "9", "12", "15"],
+    "correctAnswer": 1
+  },
+  {
+    "id": 6,
+    "question": "Which tag is used for the largest heading in HTML?",
+    "answers": ["<h6>", "<h1>", "<header>", "<h0>"],
+    "correctAnswer": 1
+  },
+  {
+    "id": 7,
+    "question": "Which programming paradigm is JavaScript known for?",
+    "answers": ["Object-Oriented", "Functional", "Procedural", "All of the above"],
+    "correctAnswer": 3
+  },
+  {
+    "id": 8,
+    "question": "What does SQL stand for?",
+    "answers": ["Structured Query Language", "Stylish Question Language", "Statement Query Language", "System Query Language"],
+    "correctAnswer": 0
+  },
+  {
+    "id": 9,
+    "question": "What is the output of 'typeof null' in JavaScript?",
+    "answers": ["null", "object", "undefined", "string"],
+    "correctAnswer": 1
+  },
+  {
+    "id": 10,
+    "question": "Which HTTP status code indicates 'Not Found'?",
+    "answers": ["404", "500", "200", "403"],
+    "correctAnswer": 0
+  }
 ]

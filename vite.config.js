@@ -1,24 +1,16 @@
-import { defineConfig } from 'vitest/config'
-import react from '@vitejs/plugin-react'
-
-// https://vitejs.dev/config/
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 export default defineConfig({
-  plugins: [react()],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/_tests_/setup.ts'
-  },
-  server: {
-    port: 3001,
-    host: '127.0.0.1',
-    open: false,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3001',
-        secure: false,
-        changeOrigin: true
-      }
-    }
-  }
-})
+    plugins: [react()],
+    server: {
+        port: 3001,
+        fs: {
+            strict: true, // Enforce proper file access
+        },
+    },
+    build: {
+        rollupOptions: {
+            input: './client/src/main.tsx', // Correct entry point based on your structure
+        },
+    },
+});
